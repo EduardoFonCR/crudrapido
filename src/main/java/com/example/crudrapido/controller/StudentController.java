@@ -29,15 +29,13 @@ public class StudentController {
     // Crear un nuevo estudiante
     @PostMapping
     public void saveStudent(@RequestBody Student student) {
-        studentService.saveOrUpdate(student); // Llama al método para crear
+        studentService.saveOrUpdate(student); // Llama al metodo para crear
     }
 
-    // Actualizar un estudiante existente
     @PutMapping("/{studentId}")
     public void updateStudent(@PathVariable("studentId") Long studentId, @RequestBody Student student) {
-        // Aquí podrías agregar alguna lógica adicional si es necesario
         student.setId(studentId); // Asegurarse de que el ID se actualiza correctamente
-        studentService.saveOrUpdate(student); // Llama al método para actualizar
+        studentService.saveOrUpdate(student); // Llama al metodo para actualizar
     }
 
     @DeleteMapping("/{studentId}")
